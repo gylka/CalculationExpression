@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationExpression.Tests", "CalculationExpression.Tests\CalculationExpression.Tests.csproj", "{BBCD7DA9-6C9E-4A09-AE29-9D89F6B68127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculationExpression", "CalculationExpression\CalculationExpression.csproj", "{52DD2467-DCAB-481B-8BC6-F95B46BBB821}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBCD7DA9-6C9E-4A09-AE29-9D89F6B68127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCD7DA9-6C9E-4A09-AE29-9D89F6B68127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCD7DA9-6C9E-4A09-AE29-9D89F6B68127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBCD7DA9-6C9E-4A09-AE29-9D89F6B68127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DD2467-DCAB-481B-8BC6-F95B46BBB821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DD2467-DCAB-481B-8BC6-F95B46BBB821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DD2467-DCAB-481B-8BC6-F95B46BBB821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DD2467-DCAB-481B-8BC6-F95B46BBB821}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
