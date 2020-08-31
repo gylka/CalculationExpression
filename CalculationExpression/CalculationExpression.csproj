@@ -45,6 +45,7 @@
 		<Compile Include="Main\Expressions\NumberExpression.cs" />
 		<Compile Include="Main\CToken.cs" />
 		<Compile Include="Main\Expressions\ScoreReferenceExpression.cs" />
+		<Compile Include="Main\Extensions\ExpressionExtensions.cs" />
 		<Compile Include="Main\Lexer.cs" />
 		<Compile Include="Main\Models\ScoreReference.cs" />
 		<Compile Include="Program.cs" />
