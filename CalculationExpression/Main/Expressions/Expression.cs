@@ -17,7 +17,5 @@ namespace CalculationExpression.Main.Expressions {
 		}
 
 		public abstract int GetHashCode();
-
-		public override string ToString() => ToDebugString();
 	}
 }

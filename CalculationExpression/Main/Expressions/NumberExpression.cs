@@ -17,5 +17,7 @@ namespace CalculationExpression.Main.Expressions {
 		public override int GetHashCode() => Value.GetHashCode();
 
 		internal override string ToDebugString() => Value.ToString(CultureInfo.InvariantCulture);
+
+		public override string ToString() => $"Number {{ Value = {Value} }}";
 	}
 }

@@ -43,9 +43,10 @@
 		<Compile Include="Main\Expressions\BinaryExpression.cs" />
 		<Compile Include="Main\Expressions\Expression.cs" />
 		<Compile Include="Main\Expressions\NumberExpression.cs" />
-		<Compile Include="Main\ExpressionToken.cs" />
+		<Compile Include="Main\CToken.cs" />
+		<Compile Include="Main\Expressions\ScoreReferenceExpression.cs" />
 		<Compile Include="Main\Lexer.cs" />
-		<Compile Include="Main\Models\WorkoutScoreReference.cs" />
+		<Compile Include="Main\Models\ScoreReference.cs" />
 		<Compile Include="Main\TextParsers.cs" />
 		<Compile Include="Program.cs" />
 		<Compile Include="Properties\AssemblyInfo.cs" />

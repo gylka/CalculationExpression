@@ -44,7 +44,6 @@
 		<Compile Include="Extensions\TokenListExtensions.cs" />
 		<Compile Include="ExpressionParserTests.cs" />
 		<Compile Include="Properties\AssemblyInfo.cs" />
-		<Compile Include="TextParsersTests.cs" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\CalculationExpression\CalculationExpression.csproj">

@@ -45,6 +45,8 @@ namespace CalculationExpression.Main.Expressions {
 					throw new ArgumentOutOfRangeException();
 			}
 		}
+
+		public override string ToString() => $"BinaryExpression [\n{Type},\n{Left}\n{Right}\n]";
 	}
 
 
