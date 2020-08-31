@@ -47,7 +47,6 @@
 		<Compile Include="Main\Expressions\ScoreReferenceExpression.cs" />
 		<Compile Include="Main\Lexer.cs" />
 		<Compile Include="Main\Models\ScoreReference.cs" />
-		<Compile Include="Main\TextParsers.cs" />
 		<Compile Include="Program.cs" />
 		<Compile Include="Properties\AssemblyInfo.cs" />
 	</ItemGroup>

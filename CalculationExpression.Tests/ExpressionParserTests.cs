@@ -26,7 +26,16 @@ namespace CalculationExpression.Tests {
 			new object[] {"123.456 * 245.90", BinaryExpression.Create(OperationType.Multiply, NumberExpression.Of(123.456m), NumberExpression.Of(245.9m))},
 			new object[] {"1 / -2.3", BinaryExpression.Create(OperationType.Divide, NumberExpression.Of(1), NumberExpression.Of(-2.3m))},
 			new object[] {"1.2 + -2.4", BinaryExpression.Create(OperationType.Add, NumberExpression.Of(1.2m), NumberExpression.Of(-2.4m))},
-			new object[] {"1.2 - -2.4", BinaryExpression.Create(OperationType.Subtract, NumberExpression.Of(1.2m), NumberExpression.Of(-2.4m))}
+			new object[] {"1.2 - -2.4", BinaryExpression.Create(OperationType.Subtract, NumberExpression.Of(1.2m), NumberExpression.Of(-2.4m))},
+			new object[] {"1.2 + {Aa.MainScore}", BinaryExpression.Create(OperationType.Add,
+				NumberExpression.Of(1.2m), 
+				ScoreReferenceExpression.Create(ScoreReference.To("Aa", ScoreType.MainScore)))},
+			new object[] {"{Aa.MainScore} - -3.4", BinaryExpression.Create(OperationType.Subtract,
+				ScoreReferenceExpression.Create(ScoreReference.To("Aa", ScoreType.MainScore)),
+				NumberExpression.Of(-3.4m))},
+			new object[] {"{Aa_234.TieBreaker} * -3.4", BinaryExpression.Create(OperationType.Multiply,
+				ScoreReferenceExpression.Create(ScoreReference.To("Aa_234", ScoreType.TieBreaker)),
+				NumberExpression.Of(-3.4m))}
 		};
 
 		[Theory]
@@ -93,6 +102,30 @@ namespace CalculationExpression.Tests {
 				"-2.34 - (-3.4 + -23)", BinaryExpression.Create(OperationType.Subtract,
 					NumberExpression.Of(-2.34m),
 					BinaryExpression.Create(OperationType.Add, NumberExpression.Of(-3.4m), NumberExpression.Of(-23m)))
+			},
+			new object[] {
+				"-2.34 - (-3.4 - {Aa.MainScore} * -23)", BinaryExpression.Create(OperationType.Subtract,
+					NumberExpression.Of(-2.34m),
+					BinaryExpression.Create(OperationType.Subtract,
+						NumberExpression.Of(-3.4m),
+						BinaryExpression.Create(OperationType.Multiply,
+							ScoreReferenceExpression.Create(ScoreReference.To("Aa", ScoreType.MainScore)),
+							NumberExpression.Of(-23))))
+			},
+			new object[] {
+				"-2.34 - ({Aa.TieBreaker} + (-3.4 - {Bb.TieBreaker} * 5))",
+				BinaryExpression.Create(OperationType.Subtract,
+					NumberExpression.Of(-2.34m),
+					BinaryExpression.Create(OperationType.Add,
+						ScoreReferenceExpression.Create(ScoreReference.To("Aa", ScoreType.TieBreaker)),
+						BinaryExpression.Create(OperationType.Subtract,
+							NumberExpression.Of(-3.4m),
+							BinaryExpression.Create(OperationType.Multiply,
+								ScoreReferenceExpression.Create(ScoreReference.To("Bb", ScoreType.TieBreaker)),
+								NumberExpression.Of(5)
+								)
+							)
+						))
 			}
 		};
 
