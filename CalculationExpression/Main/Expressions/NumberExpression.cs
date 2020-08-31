@@ -6,7 +6,7 @@ namespace CalculationExpression.Main.Expressions {
 	public class NumberExpression : Expression {
 		public decimal Value { get; }
 
-		public NumberExpression(decimal value) {
+		private NumberExpression(decimal value) {
 			Value = value;
 		}
 

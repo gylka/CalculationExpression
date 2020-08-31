@@ -11,7 +11,7 @@ namespace CalculationExpression.Main {
 		public static TokenListParser<CToken, Expression> Number =>
 			Token.EqualTo(CToken.Number)
 				.Apply(Numerics.DecimalDecimal)
-				.Select(v => (Expression) new NumberExpression(v));
+				.Select(v => (Expression) NumberExpression.Of(v));
 
 		private static TokenListParser<CToken, OperationType> Add => Token.EqualTo(CToken.Plus).Value(OperationType.Add);
 		private static TokenListParser<CToken, OperationType> Subtract => Token.EqualTo(CToken.Minus).Value(OperationType.Subtract);
@@ -38,7 +38,7 @@ namespace CalculationExpression.Main {
 			from __ in Token.EqualTo(CToken.Dot)
 			from scoreType in ScoreType
 			from ___ in Token.EqualTo(CToken.RightBracket)
-			select (Expression) ScoreReferenceExpression.Create(new ScoreReference(workoutAlias, scoreType));
+			select (Expression) ScoreReferenceExpression.Create(ScoreReference.To(workoutAlias, scoreType));
 
 		internal static TokenListParser<CToken, string> Variable =>
 			Token.EqualTo(CToken.Variable)

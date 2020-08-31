@@ -1,19 +1,19 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
-namespace CalculationExpression.Main.Models
-{
+namespace CalculationExpression.Main.Models {
 	[DebuggerDisplay("{ToString(),nq}")]
-	public class ScoreReference
-	{
+	public class ScoreReference {
 		public string WorkoutAlias { get; }
 		public ScoreType ScoreType { get; }
 
-		public ScoreReference(string workoutAlias, ScoreType scoreType)
-		{
+		private ScoreReference(string workoutAlias, ScoreType scoreType) {
+			if (string.IsNullOrEmpty(workoutAlias))
+				throw new ArgumentException(null, nameof(workoutAlias));
 			WorkoutAlias = workoutAlias;
 			ScoreType = scoreType;
 		}
-		
+
 		public static ScoreReference To(string workoutAlias, ScoreType scoreType) => new ScoreReference(workoutAlias, scoreType);
 
 		protected bool Equals(ScoreReference other) => WorkoutAlias == other.WorkoutAlias && ScoreType == other.ScoreType;
@@ -35,9 +35,8 @@ namespace CalculationExpression.Main.Models
 	}
 
 
-	
-	public enum ScoreType
-	{
-		MainScore, TieBreaker
+	public enum ScoreType {
+		MainScore,
+		TieBreaker
 	}
 }

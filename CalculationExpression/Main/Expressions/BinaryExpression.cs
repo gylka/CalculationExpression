@@ -8,10 +8,10 @@ namespace CalculationExpression.Main.Expressions {
 		public Expression Left { get; }
 		public Expression Right { get; }
 
-		public BinaryExpression(OperationType type, Expression left, Expression right) {
+		private BinaryExpression(OperationType type, Expression left, Expression right) {
 			Type = type;
-			Left = left;
-			Right = right;
+			Left = left ?? throw new ArgumentNullException(nameof(left));
+			Right = right ?? throw new ArgumentNullException(nameof(right));;
 		}
 
 		public static BinaryExpression Create(OperationType type, Expression left, Expression right) => new BinaryExpression(type, left, right);

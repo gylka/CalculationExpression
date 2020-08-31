@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using CalculationExpression.Main.Models;
 
 namespace CalculationExpression.Main.Expressions {
@@ -6,8 +7,8 @@ namespace CalculationExpression.Main.Expressions {
 	public class ScoreReferenceExpression : Expression {
 		public ScoreReference Value { get; }
 
-		public ScoreReferenceExpression(ScoreReference value) {
-			Value = value;
+		private ScoreReferenceExpression(ScoreReference value) {
+			Value = value ?? throw new ArgumentNullException(nameof(value));
 		}
 
 		public static ScoreReferenceExpression Create(ScoreReference value) => new ScoreReferenceExpression(value);
